@@ -1,0 +1,70 @@
+/* ベースのスタイル設定 */
+:root {
+  --primary-color: #006400;
+  --secondary-color: #8bc34a;
+  --background-color: #f5f5f5;
+  --card-background: #ffffff;
+  --text-color: #333333;
+  --border-color: #dddddd;
+  --accent-color: #ff5722;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  font-family: 'Noto Sans JP', sans-serif;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+button:disabled {
+  background-color: var(--border-color);
+  cursor: not-allowed;
+}
+
+/* モバイル対応のためのメディアクエリ */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  button {
+    padding: 10px 16px;
+    font-size: 1.1rem;
+  }
+}
+
+/* タッチデバイス用の最適化 */
+@media (hover: none) {
+  button:hover {
+    background-color: var(--primary-color);
+  }
+  
+  button:active {
+    background-color: var(--secondary-color);
+  }
+} 
